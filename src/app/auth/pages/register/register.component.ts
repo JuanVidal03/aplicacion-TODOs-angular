@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  constructor(){
+    document.title = "!Bienvenido, te estabamos esperando! | Juan Vidal"
+  }
 }

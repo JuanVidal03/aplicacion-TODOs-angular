@@ -11,6 +11,4 @@ export class LoginComponent {
     document.title = "!Bienvenido de vuelta! | Juan Vidal"
   }
   
-  stateAuth:boolean = true;
-  
 }

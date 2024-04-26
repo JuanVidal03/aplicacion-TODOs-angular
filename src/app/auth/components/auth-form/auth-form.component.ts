@@ -48,7 +48,7 @@ export class AuthFormComponent {
 
   // accion del formulario
   handleSubmit(){
-    this.isInLoginView ? alert('Ingresaste a la aplicación') : alert('No ingresaste a la apklicación');
+    this.isInLoginView ? alert('Ingresaste a la aplicación') : alert('Te registraste');
   }
 
   // cambiar auth
