@@ -1,0 +1,63 @@
+<div class="auth-form-container">
+    <div class="auth-title-container">
+        <h3 class="auth-title">{{ isInLoginView ? '!Bienvenido de vuelta!' :'!Bienvenido!'  }}</h3>
+        <h5 class="auth-subtitle">{{ isInLoginView ?'Inicia sesión en tu cuenta' : 'Registrate y empieza a disfrutar' }}</h5>
+    </div>
+    <div class="auth-form">
+        <form  [formGroup]="authForm" (ngSubmit)="handleSubmit()">
+
+            <div class="form-field">
+                <label>Usuario*</label>
+                <input
+                formControlName="user"
+                type="text"
+                placeholder="Ingresa tu nombre de usuario">
+
+                <!-- manejo de errores -->
+                <div *ngIf="userField?.errors && userField?.touched">
+                    <p class="error-field" *ngIf="userField?.hasError('required')">Este campo es obligatotio</p>
+                    <p class="error-field" *ngIf="userField?.hasError('maxlength')">Exedio el número de caracteres</p>
+                </div>
+            </div>
+
+            <div *ngIf="!isInLoginView" class="form-field">
+                <label>Correp Eléctronico*</label>
+                <input
+                formControlName="email"
+                type="email"
+                placeholder="Ingresa tu E-mail">
+                
+                <!-- manejo de errores -->
+                <div *ngIf="emailField?.errors && emailField?.touched">
+                    <p class="error-field" *ngIf="emailField?.hasError('maxlength')">Exedio el número de caracteres</p>
+                    <p class="error-field" *ngIf="emailField?.hasError('email')">El campo es de tipo E-mail</p>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label>Contraseña*</label>
+                <input
+                formControlName="password"
+                type="password"
+                placeholder="Ingresa tu contraseña de usuario">
+
+                <!-- manejo de errores -->
+                <div *ngIf="passwordField?.errors && passwordField?.touched">
+                    <p class="error-field" *ngIf="passwordField?.hasError('required')">Este campo es obligatotio</p>
+                    <p class="error-field" *ngIf="passwordField?.hasError('pattern')">Este campo debe tener letras y numeros, no puede contener espacios.</p>
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button
+                [disabled]="authForm.invalid"
+                [ngClass]="{ 'auth-btn': authForm.invalid}"
+                type="submit">{{ isInLoginView ? 'Ingresar' : 'Registrar'}}</button>
+            </div>
+        </form>
+    </div>
+    <div class="register-container">
+        <p *ngIf="!isInLoginView" class="register-text">¿Ya tienes cuenta? <a (click)="changeAuthState()">Ingresa aqui</a></p>
+        <p *ngIf="isInLoginView" class="register-text">¿No tienes cuenta aún? <a (click)="changeAuthState()">Registrate aqui</a></p>
+    </div>
+</div>

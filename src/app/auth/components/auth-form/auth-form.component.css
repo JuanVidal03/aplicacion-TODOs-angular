@@ -1,15 +1,5 @@
-.login-container{
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../../../../assets/auth-bg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: end;
-}
-.login-form-container{
-    width: 40%;
+.auth-form-container{
+    width: 100%;
     height: 100%;
     background-color: #fff;
     backdrop-filter: blur(10px);
@@ -20,19 +10,19 @@
     flex-direction: column;
     gap: 2rem;
 }
-.login-title-container{
+.auth-title-container{
     display: flex;
     flex-direction: column;
     width: 90%;
     gap: .3rem;
 }
-.login-title{
+.auth-title{
     color: #106443;
 }
-.login-subtitle{
+.auth-subtitle{
     font-weight: 400;
 }
-.login-form{
+.auth-form{
     width: 90%;
     background-color: #fff;
     border-radius: 14px;
@@ -80,7 +70,7 @@ form{
     transform: scale(.98);
 }
 
-.login-btn{
+.auth-btn{
     cursor: not-allowed !important;
     opacity: 0.8;
     transform: none !important;
@@ -95,7 +85,9 @@ form{
     display: flex;
     justify-content: start;
 }
-.register-text span{
+.register-text a{
     color: #046c04;
     cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
 }

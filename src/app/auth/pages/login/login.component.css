@@ -1,0 +1,13 @@
+.login-container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../../../assets/auth-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.login-form-container{
+    width: 40%;
+}
